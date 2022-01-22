@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragments.QuizFragment"
+    android:background="@color/colorDark">
+
+    <ImageButton
+        android:id="@+id/quizCloseButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:background="@android:color/transparent"
+        android:padding="16dp"
+        android:src="@drawable/quiz_close_btn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/quizTitle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="32dp"
+        android:fontFamily="@font/ubuntu_regular"
+        android:text="Loading Quiz.."
+        android:textAlignment="center"
+        android:textColor="@color/colorPrimary"
+        android:textSize="36sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/quizCloseButton" />
+
+    <TextView
+        android:id="@+id/quizQuestionNumberTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="2dp"
+        android:fontFamily="@font/ubuntu_regular"
+        android:text="Question"
+        android:textColor="@color/colorLightText"
+        app:layout_constraintEnd_toEndOf="@+id/quizCloseButton"
+        app:layout_constraintStart_toStartOf="@+id/quizTitle"
+        app:layout_constraintTop_toBottomOf="@+id/quizTitle" />
+
+    <TextView
+        android:id="@+id/quizQuestionNumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/ubuntu_regular"
+        android:text="0"
+        android:textColor="@color/colorWhite"
+        android:textSize="36sp"
+        app:layout_constraintEnd_toEndOf="@+id/quizQuestionNumberTitle"
+        app:layout_constraintStart_toStartOf="@+id/quizQuestionNumberTitle"
+        app:layout_constraintTop_toBottomOf="@+id/quizQuestionNumberTitle" />
+
+    <ProgressBar
+        android:id="@+id/quizQuestionProgressbar"
+        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+        android:layout_width="72dp"
+        android:layout_height="72dp"
+        android:layout_marginTop="32dp"
+        android:progress="100"
+        android:progressDrawable="@drawable/circular_progress"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@+id/quizQuestionNumber"
+        app:layout_constraintEnd_toEndOf="@+id/quizTitle"
+        app:layout_constraintStart_toStartOf="@+id/quizCloseButton"
+        app:layout_constraintTop_toBottomOf="@+id/quizTitle" />
+
+    <TextView
+        android:id="@+id/quizTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/ubuntu_regular"
+        android:text="10"
+        android:textColor="@color/colorWhite"
+        android:textSize="32sp"
+        app:layout_constraintBottom_toBottomOf="@+id/quizQuestionProgressbar"
+        app:layout_constraintEnd_toEndOf="@+id/quizQuestionProgressbar"
+        app:layout_constraintStart_toStartOf="@+id/quizQuestionProgressbar"
+        app:layout_constraintTop_toTopOf="@+id/quizQuestionProgressbar" />
+
+    <TextView
+        android:id="@+id/quizQuestion"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="32dp"
+        android:fontFamily="@font/ubuntu_regular"
+        android:text="Fetching Data"
+        android:textAlignment="center"
+        android:textColor="@color/colorWhite"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/quizQuestionNumber" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/quizOptionOne"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="32dp"
+        android:background="@drawable/outline_button_bg"
+        android:fontFamily="@font/ubuntu_regular"
+        android:padding="12dp"
+        android:text="Option Button"
+        android:textAllCaps="false"
+        android:textColor="@color/colorLightText"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/quizQuestion" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/quizOptionTwo"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="32dp"
+        android:background="@drawable/outline_button_bg"
+        android:fontFamily="@font/ubuntu_regular"
+        android:padding="12dp"
+        android:text="Option Button"
+        android:textAllCaps="false"
+        android:textColor="@color/colorLightText"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/quizOptionOne" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/quizOptionThree"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="32dp"
+        android:background="@drawable/outline_button_bg"
+        android:fontFamily="@font/ubuntu_regular"
+        android:padding="12dp"
+        android:text="Option Button"
+        android:textAllCaps="false"
+        android:textColor="@color/colorLightText"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/quizOptionTwo" />
+
+    <TextView
+        android:id="@+id/quizQuestionFeedback"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="32dp"
+        android:fontFamily="@font/ubuntu_regular"
+        android:text="Verifying Answer"
+        android:textAlignment="center"
+        android:textColor="@color/colorPrimary"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/quizOptionThree" />
+
+    <Button
+        android:id="@+id/quizNextButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="32dp"
+        android:fontFamily="@font/ubuntu_regular"
+        android:text="Next Question"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>
